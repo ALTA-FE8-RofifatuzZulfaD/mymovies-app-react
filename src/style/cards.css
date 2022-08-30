@@ -1,0 +1,14 @@
+.container {
+    margin: 50px;
+    display: grid;
+}
+.container-card {
+    background-color: rgb(177, 174, 174);
+    width: fit-content;
+    height: 350px;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.image {
+    width: 200px;
+}

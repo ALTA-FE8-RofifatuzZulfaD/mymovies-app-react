@@ -1,0 +1,28 @@
+.navbar {
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size: larger;
+    color: white;
+}
+.nav-cus {
+    display: flex;
+}
+.logo {
+    padding-left: 50px;
+    padding-right: 30px;
+}
+.nav-item li {
+    list-style-type: none;
+    padding-left: 50px;
+    font-weight: bolder;
+    display: inline;
+}
+.nav-list {
+    padding-top: 7px;
+    
+}
+.search-button {
+    padding: 10px;
+    background-color: whitesmoke;
+}
