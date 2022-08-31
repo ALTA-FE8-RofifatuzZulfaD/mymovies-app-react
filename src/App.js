@@ -1,55 +1,44 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from "./components/navbar";
+import NavNavbar from "./components/navbar";
 import Cards from "./components/cards";
 import { Component } from 'react';
+import axios from "axios";
+
+// const baseUrl = "https://api.themoviedb.org/3/movie/";
+// const urlHeadline = 
+//     baseUrl + "now_playing?" + `apiKey=${process.env.REACT_APP_API_KEY}` + "&language=en-US&page=1";
+const IMG_API = "https://image.tmdb.org/t/p/original/";
 
 export default class App extends Component {
   
+  state = {
+    listMovie: [],
+  };
   
-  
+  componentDidMount () {
+      const self = this;
+      axios
+        .get('https://api.themoviedb.org/3/movie/now_playing?api_key=6b9c2061fa118b2a8c8de24e04fa54f2&language=en-US&page=1')
+        .then(function (response) {
+          self.setState({
+            listMovie: response.data.results,
+          });
+        })
+        .catch(function (error) {
+          alert(error);
+        });
+  }
+
   render() {
-    const listMovie = [
-      {
-        image: "https://image.tmdb.org/t/p/original/yCyv9inVfwdZa0DyFAEEElqNgNn.jpg",
-        title: "Harry Potter And The Sorcerer's Stone"
-      },  
-      {
-        image: "https://image.tmdb.org/t/p/original/303T1dizM8Hgdh8zwPDIjsMp7d4.jpg",
-        title: "Harry Potter And The Chamber of Secret"
-      },
-      {
-        image: "https://image.tmdb.org/t/p/original/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
-        title: "Harry Potter And The Prisoner of Azkaban"
-      },
-      {
-        image: "https://image.tmdb.org/t/p/original/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
-        title: "Harry Potter And The Goblet of Fire"
-      },
-      {
-        image: "https://image.tmdb.org/t/p/original/g6n8G0xPnBVUIKKK41sNmbZB5h4.jpg",
-        title: "Harry Potter And The Order Of The Phoenix"
-      },
-      {
-        image: "https://i.pinimg.com/originals/2f/bb/34/2fbb34efd8790e9f9a5e01e8ae2834e1.jpg",
-        title: "Harry Potter And The Half-Blood Prince"
-      },
-      {
-        image: "https://image.tmdb.org/t/p/original/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
-        title: "Harry Potter And The Deathly Hallows Part 1"
-      },
-      {
-        image: "https://image.tmdb.org/t/p/original/c54HpQmuwXjHq2C9wmoACjxoom3.jpg",
-        title: "Harry Potter And The Deathly Hallows Part 2"
-      }
-    ]
+    const { listMovie } = this.state;
     return (
       <div className="App">
-        <Navbar />
+        <NavNavbar className="navbar" />
         <div >
           <div className='container'>
             {listMovie.map((item) => {
-              return (<Cards image={item.image} title={item.title} />);
+              return (<Cards image= {IMG_API+item.poster_path} title={item.title} />);
             })}
           </div>
         </div>
