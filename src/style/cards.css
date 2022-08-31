@@ -5,10 +5,19 @@
 .container-card {
     background-color: rgb(177, 174, 174);
     width: fit-content;
-    height: 350px;
+    height: 370px;
     padding: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    font-weight: bold;
+    transition: transform .5s;
+}
+.container-card:hover {
+    transform: scale(1.1);
 }
 .image {
     width: 200px;
+}
+.title {
+    padding-top: 10px;
 }

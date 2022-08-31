@@ -5,7 +5,11 @@
 .App {
   background: rgba(128, 128, 128, 0.534);
 }
+.navbar {
+  margin: 0;
+}
 .container {
   display: inline-grid;
   grid-template-columns: auto auto auto auto;
+  margin-top: 50px;
 }
