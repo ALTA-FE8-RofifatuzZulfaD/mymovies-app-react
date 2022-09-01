@@ -1,0 +1,12 @@
+.page {
+    background-color: rgba(53, 52, 52, 0.945);
+    padding-top: 150px;
+    padding-bottom: 5px;
+}
+.list-movie {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
