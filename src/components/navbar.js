@@ -1,23 +1,28 @@
-import React, { Component } from 'react'
-import '../style/navbar.css';
+import React from 'react';
+import { Container, Navbar, Nav } from "react-bootstrap";
+import logo from '../logo-movie.png';
 
-export default class Navbar extends Component {
-  render() {
-    return (
-      <nav className='navbar'>
-        <div className='nav-cus'>
-            <h1 className='logo'>Movie</h1>
-            <div className='nav-list'>
-                <ul className='nav-item'>
-                    <li>Home</li>
-                    <li>Favorites</li>
-                    <li>
-                        <button className='search-button'>Search</button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-      </nav>
-    )
-  }
+const NavNavbar = () => {
+  return (
+    <Navbar bg='dark' variant='dark' fixed='top' style={{paddingTop: '20px', paddingBottom: '20px'}}>
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=''
+              src={logo}
+              width='30'
+              height='30'
+              className='d-inline-block align-top' 
+            /> {''}
+            MyMovie
+            </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Now Playing</Nav.Link>
+            <Nav.Link href="#features">My Favorites</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+  )
 }
+
+export default NavNavbar;
