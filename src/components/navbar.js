@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Navbar, Nav } from "react-bootstrap";
+import { Link } from 'react-router-dom';
 import logo from '../logo-movie.png';
 
 const NavNavbar = () => {
@@ -16,9 +17,9 @@ const NavNavbar = () => {
             /> {''}
             MyMovie
             </Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="#home">Now Playing</Nav.Link>
-            <Nav.Link href="#features">My Favorites</Nav.Link>
+          <Nav className="me-auto d-flex gap-3 nav-title">
+            <Link className='nav-title text-decoration-none text-white' to="/">Now Playing</Link>
+            <Link to="/favorite-movies" className='text-decoration-none text-white'>My Favorites</Link>
           </Nav>
         </Container>
       </Navbar>

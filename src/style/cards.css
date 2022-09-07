@@ -22,7 +22,7 @@
 }
 .button-rate {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
 }
 .button-rate Button {
     width: 70px;
@@ -34,7 +34,18 @@
     border: rgba(110, 109, 109, 0.151);
 }
 .button-rate p {
-    text-align: right;
+    text-align: left;
     font-weight: bolder;
     align-items: center;
+    vertical-align: middle;
+}
+.heart-button {
+    background-color: white;
+}
+.fav {
+    justify-self: center;
+    margin-top: 10px;
+}
+.fav:hover {
+    color: red;
 }

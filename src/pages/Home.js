@@ -1,8 +1,9 @@
-import React, { Component, useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from "axios";
 import NavNavbar from "../components/navbar";
 import Cards from "../components/cards";
 import { useLocation, useNavigate } from "react-router-dom";
+import FavContext from "../context/FavContext";
 import '../style/home.css';
 
 const IMG_API = "https://image.tmdb.org/t/p/original/";
@@ -11,7 +12,7 @@ const movieApi = "https://api.themoviedb.org/3/movie/now_playing?api_key=6b9c206
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const {addFav} = useContext(FavContext);
   const [movie, setMovie] = useState([]);
 
   const getMovies = async () => {
@@ -22,7 +23,7 @@ const Home = () => {
      })
   };
 
-  const handleClick = (item) => {
+  const handleClickDetail = (item) => {
     navigate('/detail-page', {
       state: {
         image: IMG_API+item.poster_path,
@@ -44,18 +45,20 @@ const Home = () => {
         <NavNavbar />
         <div>
            <div className='list-movie'>
-                {movie.map((item) => {
-                    return (
-                      <Cards 
-                        image= {IMG_API+item.poster_path} 
-                        title={item.title} 
-                        rating={item.vote_average}
-                        onClick={() => handleClick(item)}
-                      />);
-                })}
+              {movie.map((item) => {
+                return (
+                  <Cards
+                    image={IMG_API+item.poster_path}
+                    title={item.title}
+                    rating={item.vote_average}
+                    onClickDetail={() => handleClickDetail(item)}
+                    onClickFav={() => addFav(item)}
+                  />
+                )
+              })}
            </div>
         </div>
-      </div>
+    </div>
   )
 }
 

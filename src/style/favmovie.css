@@ -1,0 +1,16 @@
+.body {
+    background-color: rgba(53, 52, 52, 0.945);
+    margin-top: 80px;
+    padding-top: 20px;
+}
+.body h1 {
+    color: whitesmoke;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.body-card {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    justify-content: center;
+}
