@@ -1,14 +1,51 @@
-.container {
-    margin: 50px;
-    display: grid;
-}
 .container-card {
-    background-color: rgb(177, 174, 174);
+    background-color: rgba(110, 109, 109, 0.151);
     width: fit-content;
-    height: 350px;
-    padding: 10px;
+    height: fit-content;
+    padding: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    color: whitesmoke;
+    transition: transform .5s;
+}
+.container-card:hover {
+    transform: scale(1.1);
 }
 .image {
-    width: 200px;
+    width: 250px;
+    justify-content: center;
+    border-radius: 5px;
+}
+.titletext {
+    text-align: center;
+    padding-top: 10px;
+}
+.button-rate {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+.button-rate Button {
+    width: 70px;
+    background-color: gray;
+    border: solid gray;
+}
+.button-rate Button:hover {
+    background-color: rgba(110, 109, 109, 0.842);
+    border: rgba(110, 109, 109, 0.151);
+}
+.button-rate p {
+    text-align: left;
+    font-weight: bolder;
+    align-items: center;
+    vertical-align: middle;
+}
+.heart-button {
+    background-color: white;
+}
+.fav {
+    justify-self: center;
+    margin-top: 10px;
+}
+.fav:hover {
+    color: red;
 }
